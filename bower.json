@@ -1,0 +1,25 @@
+{
+  "name": "justforthelulz",
+  "version": "0.0.0",
+  "homepage": "http://about.me/lulzaugusto",
+  "authors": [
+    "Luiz A. Crisostomo <luiz66@gmail.com>"
+  ],
+  "description": "My very own blog",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.5.0"
+  }
+}
