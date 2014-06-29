@@ -1,20 +1,37 @@
-<h1>Listing articles</h1>
-<%= link_to 'My blog', controller: 'articles' %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New article', new_article_path %>
+<div id="layout" class="pure-g">
+  <div id="sidebar" class="pure-u-1 pure-u-md-1-4">
+    <div id="header">
+      <h1 class="brand-title">Just for the LULZ!</h1>
+      <h2 class="brand-tagline">Um blog com as minhas divagações, aprendizados e reflexões sobre a vida, o universo e tudo mais. (Sobre tecnologias e desenvolvimento de software também)</h2>
+    </div>
+  </div>
+  <div id="content" class="pure-u-1 pure-u-md-3-4">
+    <div>
+      <div class="posts">
+        <h1 class="content-subhead">Posts recentes</h1>
+        <% @articles.each do |article| %>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-tile"><%= article.title %></h2>
+              <p class="post-meta">
+                By Luiz Augusto
+              </p>
+              <div class="post-description">
+                <p><%= article.text %></p>
+              </div>
+            </header>
+          </section>
+        <% end %>
+      </div>
+      <div class="footer">
+        <div class="pure-menu pure-menu-horizontal pure-menu-open">
+          <ul>
+            <li><a href="http://about.me/lulzaugusto">About</a></li>
+            <li><a href="http://twitter.com/lulzaugusto">Twitter</a></li>
+            <li><a href="http://github.com/Hodes">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
