@@ -1,0 +1,21 @@
+<h1>Edit yourself</h1>
+
+<%= form_for :author, {url: author_path, method: :patch, html: {class: 'pure-form'}} do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <%= image_tag @author.avatar.url(:small) %> <br />
+
+  <%= f.file_field :avatar %>
+
+  <p>
+    <%= f.submit 'Save', class: 'pure-button pure-button-primary' %>
+  </p>
+<% end %>

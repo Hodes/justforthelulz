@@ -12,6 +12,7 @@
         <% @articles.each do |article| %>
           <section class="post">
             <header class="post-header">
+              <%= image_tag article.author.avatar.url(:small), size: '48x48', class: 'post-avatar', alt: article.author.name + "'s avatar" %>
               <h2 class="post-title"><%= article.title %></h2>
               <p class="post-meta">
                 By <%= article.author.name %>

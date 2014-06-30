@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
+  layout 'admin'
+
   def new
+    if logged_in?
+      redirect_to new_article_path
+    end
   end
 
   def create

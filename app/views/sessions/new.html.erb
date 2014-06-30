@@ -1,20 +1,23 @@
-<%= form_tag sessions_path, :class => 'pure-form pure-form-aligned' do %>
-  <fieldset>
-    <div class="pure-control-group">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, params[:email] %>
-    </div>
-    <div class="pure-control-group">
-      <%= label_tag :password %>
-      <%= password_field_tag :password, params[:password] %>
-    </div>
-    <div class="pure-controls">
-      <label class="pure-checkbox">
-      <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-      Remember me
-      </label>
+<div id="login-form">
+  <%= form_tag sessions_path, :class => 'pure-form pure-form-aligned' do %>
+    <fieldset>
+      <div class="pure-control-group">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="pure-control-group">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+      <div class="pure-controls">
+        <label class="pure-checkbox">
+        <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+        Remember me
+        </label>
 
-      <%= submit_tag 'Log in', :class => 'pure-button pure-button-primary' %>
-    </div>
-  </fieldset>
-<% end %>
+        <%= submit_tag 'Log in', :class => 'pure-button pure-button-primary' %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+

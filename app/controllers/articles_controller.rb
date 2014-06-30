@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    render layout: 'admin'
   end
 
   def create
