@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'authors/edit' => 'authors#edit', :as => 'edit_author'
   patch 'authors/edit' => 'authors#update', :as => 'author'
   resources :articles, only: [:index, :new, :create, :show]
-  resources :sessions, only [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
   root 'articles#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
