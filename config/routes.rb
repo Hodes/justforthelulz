@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
-  get 'authors/edit' => 'authors#edit', :as => 'edit_author'
-  patch 'authors/edit' => 'authors#update', :as => 'author'
-  resources :articles, only: [:index, :new, :create, :show]
+  resources :articles, only: [:index, :show]
   resources :sessions, only: [:new, :create, :destroy]
   root 'articles#index'
 
