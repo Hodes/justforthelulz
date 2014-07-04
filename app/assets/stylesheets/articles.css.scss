@@ -1,6 +1,7 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//= require highlightjs
 @mixin box-sizing {
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -58,8 +59,7 @@ h3 {
 
 /* CONTENT */
 #content {
-	margin-left: 25%;
-	padding: 2em 3em 0;
+	padding: 2em 1em 0;
 }
 
 .content-subhead {
