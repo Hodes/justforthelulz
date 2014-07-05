@@ -71,6 +71,14 @@ hr {
     display: inline-block;
 }
 
+.nav-item a:hover,
+.brand-title:hover,
+.brand-title a:hover {
+    color: black;
+    border-color: black;
+    cursor: pointer
+}
+
 /* CONTENT */
 #content {
 	padding: 2em 1em 0;
@@ -116,30 +124,14 @@ hr {
     line-height: 1.8em;
 }
 
-/* FOOTER */
-.footer {
-	padding: 1em 0;
-	text-align: center;
-}
-
-.footer a {
-    color: #ccc;
-    font-size: 80%;
-}
-
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-    background: none;
-}
-
 @media (min-width: 48em) {
     #content {
         padding: 2em 3em 0;
-        margin-left: 25%;
+        margin-left: 300px;
     }
 
     #header {
-        margin: 10% 2em 0;
+        margin: 50% 2em 0;
         text-align: center;
     }
 
@@ -147,5 +139,6 @@ hr {
         position: fixed;
         top: 0;
         bottom: 0;
+        width: 300px;
     }
 }
