@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  layout 'blog'
   before_filter :require_login, :only => [:new, :create]
 
   def index

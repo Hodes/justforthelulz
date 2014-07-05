@@ -1,11 +1,14 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-
-<%= link_to 'Back', articles_path %>
+<div class="posts">
+    <section class="post">
+      <header class="post-header">
+        <%= image_tag @article.author.avatar.url(:small), size: '48x48', class: 'post-avatar', alt: @article.author.name + "'s avatar" %>
+        <h2 class="post-title"><%= @article.title %></h2>
+        <p class="post-meta">
+          By <%= @article.author.name %>
+        </p>
+        <div class="post-description">
+          <p><%= kramdown @article.text %></p>
+        </div>
+      </header>
+    </section>
+</div>

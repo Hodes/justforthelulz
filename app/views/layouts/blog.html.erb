@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="layout" class="pure-g">
+  <div id="sidebar" class="pure-u-1 pure-u-md-1-4">
+    <div id="header">
+      <h1 class="brand-title">Just for the LULZ!</h1>
+      <h2 class="brand-tagline">Um blog com os meus aprendizados e reflexões sobre tecnologia, desenvolvimento de software, a vida, o universo e tudo mais.</h2>
+    </div>
+  </div>
+  <div id="content" class="pure-u-1 pure-u-md-3-4">
+    <div>
+      <%= yield %>
+      <div class="footer">
+        <div class="pure-menu pure-menu-horizontal pure-menu-open">
+          <ul>
+            <li><a href="http://about.me/lulzaugusto">About</a></li>
+            <li><a href="http://twitter.com/lulzaugusto">Twitter</a></li>
+            <li><a href="http://github.com/Hodes">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
