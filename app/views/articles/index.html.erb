@@ -1,5 +1,4 @@
 <div class="posts">
-  <h1 class="content-subhead">Posts recentes</h1>
   <% @articles.each do |article| %>
     <%= render partial: 'post', locals: {article: article} %>
   <% end %>
