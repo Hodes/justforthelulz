@@ -1,0 +1,12 @@
+defaults: &defaults
+  blog_title       : "Luiz Augusto's Blog"
+  blog_description : "Tecnologia, desenvolvimento de software, a vida, o universo e tudo mais"
+  blog_home_title  : "Luiz Augusto's Blog"
+  blog_post_title  : "Luiz Augusto's Blog | %s"
+  disqus_shortname : "justforthelulz"
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults

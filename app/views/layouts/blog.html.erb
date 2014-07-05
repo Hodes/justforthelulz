@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= auto_discovery_link_tag :atom, "/feed" %>
   <%= auto_discovery_link_tag :rss, "/feed.rss" %>
-  <title>Blog</title>
+  <title><%= page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,9 +13,9 @@
 <div id="layout" class="pure-g">
   <div id="sidebar" class="pure-u-1">
     <div id="header">
-      <h1 class="brand-title"><a href="/">Luiz Augusto's Blog</a></h1>
+      <h1 class="brand-title"><a href="/"><%= blog_title %></a></h1>
       <hr />
-      <h2 class="brand-tagline">Tecnologia, desenvolvimento de software, a vida, o universo e tudo mais.</h2>
+      <h2 class="brand-tagline"><%= blog_description %></h2>
       <ul class="nav-list">
         <li class="nav-item">
           <a href="http://github.com/hodes">

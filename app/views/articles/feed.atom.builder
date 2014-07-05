@@ -1,5 +1,5 @@
 atom_feed :language => 'pt-BR' do |feed|
-  feed.title 'Blog do Luiz Augusto'
+  feed.title blog_title
   feed.updated @articles.first.updated_at
 
   @articles.each do |item|
