@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701003642) do
+ActiveRecord::Schema.define(version: 20140705004235) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(version: 20140701003642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
+    t.string   "slug"
   end
 
   add_index "articles", ["author_id"], name: "index_articles_on_author_id"
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -55,5 +57,18 @@ ActiveRecord::Schema.define(version: 20140701003642) do
 
   add_index "authors", ["email"], name: "index_authors_on_email", unique: true
   add_index "authors", ["remember_me_token"], name: "index_authors_on_remember_me_token"
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
 end
