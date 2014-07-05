@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
+  get 'feed' => 'articles#feed', :as => 'feed', :defaults => { :format => 'atom' }
   resources :articles, only: [:index, :show]
   resources :sessions, only: [:new, :create, :destroy]
   root 'articles#index'
