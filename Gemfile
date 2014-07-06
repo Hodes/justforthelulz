@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'sorcery'
-gem 'protected_attributes'
+# gem 'protected_attributes'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'kramdown'
 gem 'settingslogic'

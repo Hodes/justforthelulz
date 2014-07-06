@@ -1,6 +1,4 @@
 class Author < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :avatar, :name
-
   has_many :articles
 
   authenticates_with_sorcery!
