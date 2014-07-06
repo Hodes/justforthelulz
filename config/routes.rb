@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  ActiveAdmin.routes(self)
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
-  get 'feed' => 'articles#feed', :as => 'feed', :defaults => { :format => 'atom' }
-  resources :articles, only: [:index, :show]
+  get 'post/:id' => 'blog#show', :as => 'post'
+  get 'feed' => 'blog#feed', :as => 'feed', :defaults => { :format => 'atom' }
+  namespace :admin do
+    resources :articles
+  end
   resources :sessions, only: [:new, :create, :destroy]
-  root 'articles#index'
+  root 'blog#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

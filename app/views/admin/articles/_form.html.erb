@@ -1,0 +1,14 @@
+<%= form_for :article, {url: @article.new_record? ? new_admin_article_path : admin_article_path(@article), html: {class: 'pure-form pure-form-stacked'}} do |f| %>
+  <fieldset>
+    <legend><%= @legend %></legend>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'pure-input-1' %>
+    <br />
+
+    <%= f.label :text %>
+    <%= f.text_area :text, cols: '90', rows: '20' %>
+    <br />
+
+    <%= f.submit 'Post', class: 'pure-button pure-button-primary' %>
+  </fieldset>
+<% end %>

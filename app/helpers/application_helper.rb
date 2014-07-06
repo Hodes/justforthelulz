@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title
-    if current_page?(root_url) or current_page?(articles_path)
+    if current_page?(root_url) or current_page?(post_path)
       Settings.blog_home_title
     else
       Settings.blog_post_title % @article.title

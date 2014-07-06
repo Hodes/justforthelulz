@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * require_tree .
+ *= require_self
+ *= require pure
+ *= require pure/grids-responsive
+ *= require highlightjs
+ *= require fontawesome
+ *= require blog
+*/
+@mixin box-sizing {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* { @include box-sizing; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+/* LAYOUT CSS */
+/* SIDEBAR */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#layout {
+	padding: 0;
+}
+
+#sidebar {
+	background: rgb(61, 79, 93);
+    color: #fff;
+}
+
+#header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.brand-title {
+    border: 3px solid white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding: 10px 10px 7px;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
+
+hr {
+    border-width: 0;
+    height: 1px;
+    background-color: white;
+    width: 80%;
+}
+
+.nav-list {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-item a:hover,
+.brand-title:hover,
+.brand-title a:hover {
+    color: black;
+    border-color: black;
+    cursor: pointer
+}
+
+/* CONTENT */
+#content {
+	padding: 2em 1em 0;
+}
+
+.content-subhead {
+	border-bottom: 1px solid #EEEEEE;
+    color: #AAAAAA;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    padding: 0.4em 0;
+    text-transform: uppercase;
+}
+
+.post {
+	padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ebf2f6;
+}
+
+.post-title {
+	color: #222222;
+	font-size: 2em;
+	margin-bottom: 0.2em;
+}
+
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+
+.post-meta {
+	color: #999999;
+	font-size: 90%;
+	margin: 0;
+}
+
+.post-description {
+	color: #444444;
+    font-family: Georgia,"Cambria",serif;
+    line-height: 1.8em;
+}
+
+@media (min-width: 48em) {
+    #content {
+        padding: 2em 3em 0;
+        margin-left: 300px;
+    }
+
+    #header {
+        margin: 50% 2em 0;
+        text-align: center;
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 300px;
+    }
+}

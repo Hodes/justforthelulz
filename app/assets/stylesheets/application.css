@@ -11,10 +11,20 @@
  * file per style scope.
  *
  * require_tree .
- *= require_self
  *= require pure
  *= require pure/grids-responsive
- *= require articles
- *= require authors
- *= require sessions
+ *= require_self
  */
+
+main {
+	margin: 30px 0 0 20%;
+}
+
+.button-error {
+	background: rgb(202, 60, 60); /* this is a maroon */
+	color: white;
+}
+
+table {
+	width: 100%;
+}
