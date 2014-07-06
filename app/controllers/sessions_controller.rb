@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
     if user
       redirect_back_or_to admin_articles_path
     else
-      flash.now.alert = 'Invalid email or password'
-      redirect_to :back
+      redirect_to :back, alert: 'Invalid email or password'
     end
   end
 

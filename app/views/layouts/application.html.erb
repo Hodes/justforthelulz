@@ -21,6 +21,9 @@
 
 <div class="pure-g">
   <main role="main" class="pure-u-1 pure-u-md-3-5">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
     <%= yield %>
   </main>
 </div>
