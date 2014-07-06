@@ -3,8 +3,7 @@ atom_feed :language => 'pt-BR' do |feed|
   feed.updated @articles.first.updated_at
 
   @articles.each do |item|
-    feed.entry(item) do |entry|
-      entry.url article_path(item.slug)
+    feed.entry(item, url: post_path(item.slug)) do |entry|
       entry.title item.title
       entry.content kramdown(item.text), :type => 'html'
       entry.updated(item.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ"))

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'post/:id' => 'blog#show', :as => 'post'
   get 'feed' => 'blog#feed', :as => 'feed', :defaults => { :format => 'atom' }
   namespace :admin do
+    get '/' => 'articles#index'
     resources :articles
     get 'author' => 'authors#edit', :as => 'author'
     patch 'author' => 'authors#update', :as => 'edit_author'
