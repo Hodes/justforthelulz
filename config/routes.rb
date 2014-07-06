@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'feed' => 'blog#feed', :as => 'feed', :defaults => { :format => 'atom' }
   namespace :admin do
     resources :articles
+    get 'author' => 'authors#edit', :as => 'author'
+    patch 'author' => 'authors#update', :as => 'edit_author'
   end
   resources :sessions, only: [:new, :create, :destroy]
   root 'blog#index'

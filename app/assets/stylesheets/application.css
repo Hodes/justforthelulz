@@ -29,14 +29,22 @@ table {
 	width: 100%;
 }
 
-.alert {
-	background-color: #f2dede;
-	color: #a94442;
+.flash {
 	padding: 10px 10px;
 	-webkit-border-radius: 0.5em;
 	-moz-border-radius: 0.5em;
-	border-radius: 0.5em;
+	border-radius: 0.2em;
 	margin-bottom: 20px;
+}
+
+.error {
+	background-color: #f2dede;
+	color: #a94442;
+}
+
+.success {
+	background-color: #dff0d8;
+	color: #3c763d;
 }
 
 #login-form {

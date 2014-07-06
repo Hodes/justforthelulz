@@ -6,39 +6,41 @@ class Admin::ArticlesController < AdminController
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.new
     @legend = 'New post'
     render 'post'
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     @legend = 'Edit post'
     render 'post'
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
 
     if @article.save
-      redirect_to  action: 'index'
+      flash.now[:success] = 'Saved!'
     else
-      render 'new'
+      flash.now[:error] = 'Ops! An error occurred'
     end
+
+    render 'post'
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
 
     if @article.update(article_params)
-      redirect_to action: 'index'
-    else
-      render 'edit'
+      flash.now[:success] = 'Saved!'
     end
+
+    render 'post'
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
 
     @article.destroy
     redirect_to action: 'index'

@@ -14,6 +14,7 @@
     <a href="<%= admin_articles_path %>" class="pure-menu-heading"><%= blog_title %></a>
     <ul>
         <li><%= link_to 'New Post', new_admin_article_path %></li>
+        <li><%= link_to 'Edit Profile', admin_author_path %></li>
     </ul>
   </div>
 </header>
@@ -22,7 +23,7 @@
 <div class="pure-g">
   <main role="main" class="pure-u-1 pure-u-md-3-5">
     <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
+      <%= content_tag :div, msg, class: name + ' flash' %>
     <% end -%>
     <%= yield %>
   </main>

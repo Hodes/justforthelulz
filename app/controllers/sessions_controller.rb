@@ -11,12 +11,14 @@ class SessionsController < ApplicationController
     if user
       redirect_back_or_to admin_articles_path
     else
-      redirect_to :back, alert: 'Invalid email or password'
+      flash[:error] = 'Invalid email or password'
+      redirect_to :back
     end
   end
 
   def destroy
     logout
+    flash[:success] = 'Logout successfully'
     redirect_to action: 'new'
   end
 end

@@ -1,21 +1,21 @@
-<h1>Edit yourself</h1>
+<%= form_for :author, {url: admin_edit_author_path, method: :patch, html: {class: 'pure-form pure-form-stacked'}} do |f| %>
+  <fieldset>
+    <legend>Edit Profile</legend>
 
-<%= form_for :author, {url: author_path, method: :patch, html: {class: 'pure-form'}} do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'pure-input-1' %>
+    <br />
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'pure-input-1' %>
+    <br />
 
-  <%= image_tag @author.avatar.url(:small) %> <br />
+    <%= image_tag @author.avatar.url(:small) %>
+    <br />
 
-  <%= f.file_field :avatar %>
+    <%= f.file_field :avatar %>
+    <br /><br />
 
-  <p>
     <%= f.submit 'Save', class: 'pure-button pure-button-primary' %>
-  </p>
+  </fieldset>
 <% end %>
