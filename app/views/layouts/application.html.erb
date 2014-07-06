@@ -10,18 +10,19 @@
 
 <% if logged_in? %>
 <header>
-  <div class="pure-menu pure-menu-open pure-menu-horizontal">
-    <a href="<%= admin_articles_path %>" class="pure-menu-heading"><%= blog_title %></a>
+  <div class="pure-menu pure-menu-open pure-menu-horizontal menu">
+    <a href="<%= admin_articles_path %>" class="pure-menu-heading heading"><%= blog_title %></a>
     <ul>
         <li><%= link_to 'New Post', new_admin_article_path %></li>
         <li><%= link_to 'Edit Profile', admin_author_path %></li>
+        <li><%= link_to 'Logout', logout_path %></li>
     </ul>
   </div>
 </header>
 <% end %>
 
 <div class="pure-g">
-  <main role="main" class="pure-u-1 pure-u-md-3-5">
+  <main role="main" class="pure-u-1 pure-u-md-20-24">
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name + ' flash' %>
     <% end -%>

@@ -4,5 +4,6 @@ class Article < ActiveRecord::Base
 
   belongs_to :author
 
+  scope :published, -> { where(published: true) }
   default_scope { order(created_at: :desc) }
 end

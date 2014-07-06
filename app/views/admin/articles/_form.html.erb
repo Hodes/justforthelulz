@@ -7,8 +7,12 @@
     <br />
 
     <%= f.label :text %>
-    <%= f.text_area :text, cols: '90', rows: '20' %>
+    <%= f.text_area :text, class: 'pure-input-1', rows: '20' %>
     <br />
+
+    <label for="article_published" class="pure-checkbox">
+      <%= f.check_box 'published', {checked: @article.published}, 1, 0 %> Published
+    </label>
 
     <%= f.submit 'Post', class: 'pure-button pure-button-primary' %>
   </fieldset>

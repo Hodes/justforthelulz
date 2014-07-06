@@ -7,6 +7,7 @@ class Admin::ArticlesController < AdminController
 
   def new
     @article = current_user.articles.new
+    @article.published = false
     @legend = 'New post'
     render 'post'
   end
@@ -48,6 +49,6 @@ class Admin::ArticlesController < AdminController
 
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :published)
     end
 end
