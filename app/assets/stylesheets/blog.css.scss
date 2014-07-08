@@ -15,7 +15,6 @@
  *= require pure
  *= require pure/grids-responsive
  *= require highlightjs
- *= require fontawesome
  *= require blog
 */
 @mixin box-sizing {
@@ -146,7 +145,7 @@ hr {
     }
 
     #header {
-        margin: 50% 2em 0;
+        margin: 70% 2em 0;
         text-align: center;
     }
 
