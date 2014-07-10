@@ -1,6 +1,6 @@
 atom_feed :language => 'pt-BR' do |feed|
   feed.title blog_title
-  feed.updated @articles.first.updated_at
+  feed.updated @articles.first.nil? ? Time.new(1992, 5, 3, 4, 0, 0, '-03:00') : @articles.first.updated_at
 
   @articles.each do |item|
     feed.entry(item, url: post_path(item.slug)) do |entry|
