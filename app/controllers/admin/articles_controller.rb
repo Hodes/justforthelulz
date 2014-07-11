@@ -47,6 +47,10 @@ class Admin::ArticlesController < AdminController
     redirect_to action: 'index'
   end
 
+  def preview
+    render inline: Kramdown::Document.new(params[:text]).to_html
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :text, :published)

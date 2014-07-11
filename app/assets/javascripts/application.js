@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery-ujs
 //= require_self
+//= require highlightjs
+//= require articles
 // require_tree .

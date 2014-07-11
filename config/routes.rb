@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :articles
     get 'author' => 'authors#edit', :as => 'author'
     patch 'author' => 'authors#update', :as => 'edit_author'
+    post 'articles/preview'  => 'articles#preview', :as => 'article_preview'
   end
   resources :sessions, only: [:new, :create, :destroy]
   root 'blog#index'
