@@ -12,6 +12,7 @@ A few basic gems:
 * Kramdown (markdown proccessor)
 * Settingslogic (blog settings: title, ps)
 * Friendly_id (post slugs)
+* truncate_html (https://github.com/hgmnz/truncate_html)
 
 It is still in development. I'm probably going to do:
 

@@ -1,4 +1,9 @@
 <div class="posts">
-  <%= render partial: 'post', locals: {article: @article} %>
+  <section class="post">
+    <%= render partial: 'post_header', locals: {article: @article} %>
+    <div class="post-description">
+      <p><%= kramdown @article.text %></p>
+    </div>
+  </section>
 </div>
 <%= render :partial => "shared/disqus" %>

@@ -1,5 +1,10 @@
 <div class="posts">
   <% @articles.each do |article| %>
-    <%= render partial: 'post', locals: {article: article} %>
+    <section class="post">
+      <%= render partial: 'post_header', locals: {article: article} %>
+      <div class="post-description">
+        <p><%= truncate_html(kramdown(article.text), length: 350, omission: '...') %></p>
+      </div>
+    </section>
   <% end %>
 </div>
